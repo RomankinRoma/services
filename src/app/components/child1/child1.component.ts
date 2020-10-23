@@ -10,13 +10,13 @@ import {SharedService} from '../../services/shared-service.service';
 export class Child1Component implements OnInit {
   @Input()
   users:User[];
-  constructor(private userService:SharedService) { }
+  @Input()
+  deleteUser:Function;
+  @Input()
+  setUser:Function;
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  deleteUser(user:User){
-    this.userService.deleteUser(user);
   }
 
 }

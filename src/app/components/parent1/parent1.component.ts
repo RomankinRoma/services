@@ -8,17 +8,26 @@ import {User} from '../../models/User';
   styleUrls: ['./parent1.component.css']
 })
 export class Parent1Component implements OnInit {
-
+  user=new User(null,null,null);
   users:User[];
-
+  deleteUsers:Function;
+  setUserForChild:Function;
   constructor(private userService:SharedService) { }
 
   ngOnInit(): void {
-
+  this.setUserForChild=this.setUser.bind(this);
+  this.deleteUsers=this.deleteUser.bind(this);
   }
 
   getUsers(){
     this.users=this.userService.getUsers();
+  }
+  deleteUser(user:User){
+    this.userService.deleteUser(user);
+  }
+
+  setUser(user:User){
+    this.user=user;
   }
 
 }

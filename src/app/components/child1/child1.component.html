@@ -1,16 +1,18 @@
 <div>
-  <table >
+  <table class="table">
     <thead>
       <td>ID</td>
       <td>Name</td>
       <td>Age</td>
       <td>Delete</td>
+      <td>Show Info</td>
     </thead>
     <tr *ngFor="let u of users">
       <td>{{u.id}}</td>
       <td>{{u.name}}</td>
       <td>{{u.age}}</td>
-      <td><button (click)="deleteUser(u)">Delete</button></td>
+      <td><button CLASS="btn btn-dark" (click)="deleteUser(u)">Delete</button></td>
+      <td><button CLASS="btn btn-success" (click)="setUser(u)">Show</button></td>
     </tr>
 
   </table>

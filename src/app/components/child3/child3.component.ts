@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {SharedService} from '../../services/shared-service.service';
 import {User} from '../../models/User';
 
@@ -8,16 +8,15 @@ import {User} from '../../models/User';
   styleUrls: ['./child3.component.css']
 })
 export class Child3Component implements OnInit {
-
-  user=new User(null,null,null);
-
-  constructor(private userService: SharedService) { }
+  @Input()
+  user:User;
+  @Input()
+  addUser:Function;
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  addUser(){
-    this.userService.addUser(this.user.name,this.user.age,this.user.id);
-  }
+
 
 }

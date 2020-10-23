@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {User} from '../../models/User';
 
 @Component({
   selector: 'app-child2',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Child2Component implements OnInit {
 
+  @Input()
+  user:User;
+  @Input()
+  deleteUser:Function;
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
 }

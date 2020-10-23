@@ -1,3 +1,5 @@
-<button (click)="getUsers()">Get Users</button>
-<app-child1 [users]="users"></app-child1>
-<app-child2></app-child2>
+<button class="btn btn-primary btn-lg" (click)="getUsers()">Get Users</button>
+<div class="row"><div class="col"><app-child1 [deleteUser]="deleteUsers" [users]="users" [setUser]="setUserForChild"></app-child1></div>
+  <div class="col"><app-child2 *ngIf="user.id!=null" [deleteUser]="deleteUsers" [user]="user"></app-child2>
+  </div>
+</div>

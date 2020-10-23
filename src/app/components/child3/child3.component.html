@@ -1,6 +1,10 @@
 <form>
-  <input type="text" [(ngModel)]="user.name" name="name" placeholder="Name">
-  <input type="number" [(ngModel)]="user.id" name="id" placeholder="ID">
-  <input type="number" [(ngModel)]="user.age" name="age" placeholder="Age">
-  <button (click)="addUser()">Add User</button>
+  <div class="input-group">
+    <input type="number" placeholder="ID" aria-label="First name" [(ngModel)]="user.id" name="id" class="form-control">
+    <input type="text" placeholder="Name" aria-label="Last name" [(ngModel)]="user.name" name="name" class="form-control">
+    <input type="number" placeholder="Age" aria-label="Last name" [(ngModel)]="user.age" name="age" class="form-control">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button" (click)="addUser(user)" id="button-addon2">Add User</button>
+    </div>
+  </div>
 </form>

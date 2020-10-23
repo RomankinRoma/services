@@ -13,7 +13,7 @@ export class SharedService {
   constructor(private logService:LoggingService) { }
 
   getUsers(){
-    this.logService.consoleLog(this.users);
+    this.logService.consoleLog("Users\n"+this.users.toString());
     return this.users;
   }
   deleteUser(user:User){
@@ -21,7 +21,7 @@ export class SharedService {
     this.logService.consoleLog(user.name+"  deleted!")
   }
 
-  addUser(n:string,age:number,id:number){
+  addUser(id:number,n:string,age:number){
     this.users.push(new User(id,n,age));
     this.logService.consoleLog(n+" added to base!")
   }
